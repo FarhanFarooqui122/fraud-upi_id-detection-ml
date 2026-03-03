@@ -7,7 +7,7 @@
 [![Hackathon](https://img.shields.io/badge/Built%20For-Hackathon-purple?style=for-the-badge)](/)
 
 <br/>
-a high-performance Machine Learning solution designed to identify fraudulent Virtual Payment Addresses (VPAs). By analyzing structural patterns, typosquatting techniques, and linguistic features, UPI-Shield prevents "Man-in-the-middle" and "Impersonation" scams in the UPI ecosystem.
+a high-performance Machine Learning solution designed to identify fraudulent Virtual Payment Addresses (VPAs). By analyzing structural patterns, typosquatting techniques, and linguistic features, this model prevents "Man-in-the-middle" and "Impersonation" scams in the UPI ecosystem.
 
 
 ---
