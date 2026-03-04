@@ -51,6 +51,16 @@ python app.py
 * 🔍 Keyword Scanner: Identifies 150+ high-risk triggers like KYC, Urgency, Refund, and Govt Schemes.
 
 * 🏆 Optimized XGBoost: Tuned for maximum AUC (0.99+) to minimize false positives in real-time.
+---
+# 🎯 Risk Levels
+
+| Score | Level | Action |
+|---|---|---|
+| 0 – 29 | ✅ LOW | Transaction allowed |
+| 30 – 64 | ⚠️ MEDIUM | Request additional verification |
+| 65 – 100 | 🚨 HIGH | Block transaction immediately |
+
+---
 
 
 ## 📁 Project Structure
@@ -82,7 +92,6 @@ fraud-upi_id-detection/
 
 
 ---
-
 
 
 
