@@ -1,4 +1,4 @@
-### 🛡️ Real-Time UPI Fraud Detection using Machine Learning
+### 🛡️ Real-Time Fraud UPI ID Detection using Machine Learning
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![XGBoost](https://img.shields.io/badge/XGBoost-ML%20Model-red?style=for-the-badge)](https://xgboost.readthedocs.io)
