@@ -3,11 +3,7 @@ import re
 import math
 import joblib
 from collections import Counter
-from difflib import SequenceMatcher
-
-# ============================================================
-# CONSTANTS — must match train.py exactly
-# ============================================================
+from difflib import SequenceMatcher
 
 LEGIT_HANDLES = list(set([
     'oksbi', 'sbi', 'sbipay',
@@ -109,11 +105,7 @@ SUSPICIOUS_KEYWORDS = list(set([
     'admin', 'root', 'superuser', 'master',
     'backup', 'recovery', 'restore', 'reset',
 ]))
-
-
-# ============================================================
-# FEATURE EXTRACTION — same as train.py
-# ============================================================
+
 
 def extract_features(vpa):
     vpa = vpa.lower().strip()
@@ -171,10 +163,9 @@ def extract_features(vpa):
     return features
 
 
-# ============================================================
-# PREDICTION
-# ============================================================
 
+#-PREDICTION
+
 def predict_upi_fraud(upi_id):
     model = joblib.load('upi_fraud_model.pkl')
     columns = joblib.load('feature_columns.pkl')
@@ -229,10 +220,9 @@ def predict_upi_fraud(upi_id):
                 "top_signal": "exception"}
 
 
-# ============================================================
-# CLI
-# ============================================================
 
+#-CLI
+
 print("\n" + "="*50)
 print("   UPI FRAUD DETECTION SYSTEM")
 print("="*50)
