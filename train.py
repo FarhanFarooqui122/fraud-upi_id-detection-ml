@@ -16,11 +16,7 @@ from imblearn.over_sampling import SMOTE
 import warnings
 warnings.filterwarnings('ignore')
 
-fake = Faker('en_IN')
-
-# ============================================================
-# CONSTANTS
-# ============================================================
+fake = Faker('en_IN')
 
 LEGIT_HANDLES = list(set([
     'oksbi', 'sbi', 'sbipay',
@@ -167,10 +163,7 @@ INDIAN_LAST_NAMES = [
     'agarwal', 'bansal', 'jain', 'mittal', 'goyal', 'garg', 'jindal',
     'desai', 'patil', 'kulkarni', 'naik', 'hegde', 'shetty', 'kamath'
 ]
-
-# ============================================================
-# STEP 1 - DATA GENERATION
-# ============================================================
+
 
 def generate_legit_vpa():
     handle = random.choice(LEGIT_HANDLES)
@@ -307,14 +300,11 @@ for i in range(40000):
         print(f"  Fraud: {i}/40000")
 
 df = pd.DataFrame(records).sample(frac=1).reset_index(drop=True)
-print(f"\n✅ Dataset ready!")
+print(f"\n Dataset ready!")
 print(df['label'].value_counts())
 print(f"Total samples: {len(df)}")
 
-
-# ============================================================
-# STEP 2 - FEATURE EXTRACTION
-# ============================================================
+
 
 def extract_features(vpa):
     vpa = vpa.lower().strip()
@@ -387,10 +377,7 @@ feature_df.dropna(inplace=True)
 print(feature_df.head())
 print(f"Features: {len(feature_df.columns)-1}")
 
-
-# ============================================================
-# STEP 3 - TRAIN MODELS
-# ============================================================
+#training
 
 X = feature_df.drop('label', axis=1)
 y = feature_df['label']
@@ -434,9 +421,7 @@ for name, model in models.items():
     print(classification_report(y_test, y_pred, target_names=['Legit', 'Fraud']))
 
 
-# ============================================================
-# STEP 4 - SAVE MODEL
-# ============================================================
+#savemodel
 
 best_model = results['XGBoost']['model']
 joblib.dump(best_model, 'upi_fraud_model.pkl')
@@ -444,4 +429,4 @@ joblib.dump(X.columns.tolist(), 'feature_columns.pkl')
 
 import os
 size = os.path.getsize('upi_fraud_model.pkl') / (1024 * 1024)
-print(f"\n✅ Model saved! Size: {round(size, 2)} MB")
+print(f"\n Model saved! Size: {round(size, 2)} MB")
